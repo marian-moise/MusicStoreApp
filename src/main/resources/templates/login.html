@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--<html xmlns:th="http://www.w3.org/1999/xhtml">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body style="background: linear-gradient(#0c5460, burlywood); padding-bottom: 280px">
+<div class="container"
+     style="background-color: #c6c8ca; width: 400px; margin-top: 150px; padding-bottom: 20px;color: black; zoom: 0.85;
+    -moz-transform: scale(0.85);">
+    <h2 style="font-size: 25px">User Account - The Music Store</h2>
+    <hr>
+
+
+    <div class="tab-content">
+        <!--        Login -->
+        <div id="home" class="tab-pane fade in active">
+            <form th:action="@{/login}" th:object="${userDTO}" method="post">
+                <p th:if="${invalidCredentials}" class="error">Username or Password is wrong</p>
+                <div class="form-group1" >
+                    <label for="username" >Username</label>
+                    <input required="required" type="text" class="form-control" id="username"
+                           name="username" autofocus="autofocus"/>
+                    <a style="color: gray">Enter username</a>
+
+                </div>
+                <div class="form-group2">
+                    <label for="password" >Password</label>
+                    <input required="required" type="password" class="form-control" id="password"
+                           name="password" autofocus="autofocus"/>
+                    <a style="color: gray">Enter a password for the account</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Log in</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>
+</html>

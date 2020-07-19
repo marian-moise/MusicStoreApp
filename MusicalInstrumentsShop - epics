@@ -1,0 +1,102 @@
+db migration:
+https://github.com/kinkey/spring-boot-teach/tree/master/src/main/resources
+
+
+1. User Management:
+- sign up;
+- log in;
+- evntual retrieve password;
+- shipping and billing informations;
+
+2. Shopping Cart
+3.Separare MusicalStore de Admin
+-> in Admin pot adauga, sterge, updata instrumente muzicale;
+-> toate modificarile vor fi afisate in  frontend;
+
+Strunctura:
+-> prima pagina: 
+	-> sa aiba un carousell cu diferite instrumente puse pe un slide, sa apara pe mijloc categoriile de instrumente:
+       -> Chitare electrice;
+       -> Bassuri;
+       -> Clape si piane;
+       -> Tobe si percutie;
+       -> altele;
+     -> in dreapta sus MyAccount + ShoppingCart;
+     -> eventual jos ca footer se poate pune adresa magazinului fizic, orele de lucru;
+
+-> a doua pagina:
+		-> in functie de ce categorie am selectat va aparea o lista cu toate produsele:
+		-> fiecare rand din lista va avea :
+			-> poza instrument;
+			-> denumire; 
+			-> descriere produs + specs;
+			-> pret in lei;
+			-> optiunea de a adauga in cos;
+
+-> a treia pagina:
+		-> cosul de cumparaturi;
+
+
+
+
+
+=================================================================
+							FUNCTIONALITATI - Arhitectura Generala
+=================================================================
+
+FRONTEND:
+
+A) My Account:
+
+***Guest - login
+	     - forget password
+	     - create account
+
+***User - profile -> nume, prenume, username, password, email;
+		- billing -> informatii despre card, etc;
+		- shipping -> shipping adress;
+		- order history -> comenzile plasate;
+
+B) Instruments List - Cautare rapida instrumente:
+
+***Search - dupa categorie;
+		  - dupa cuvinte cheie
+***View Instruments Detail info :
+          - adauga in cos
+		  - arata disponibilitatea produsului;
+
+C) Sopping Card:
+
+***Card Item -> sa existe posibilitatea de a modifica itemul;
+***Checkout -> sa contina urmatoarele caracteristici:
+				- shipping;
+				- billing;
+				- order confirmation;
+				- payment;
+
+BACKEND:
+
+D) Admin Portal - Instruments Management
+
+***Instruments List -> Instrumnet - posibilitatea de a adauga un nou instrument;
+								  - posibilitatea de a face update la un anumit instrument;
+								  - posibilitatea de a sterge un anumit instrument;
+
+Entitati:
+User:
+private Long id;
+private String username;
+private String password;
+private String firstName;
+private String lastName;
+private String email;
+private String phone;
+private boolean enabled=true;
+
+
+
+
+
+
+
+
