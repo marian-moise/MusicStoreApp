@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "instruments")
-public class Instruments {
+public class Instrument {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -29,7 +29,7 @@ public class Instruments {
     @Column(name="image_url")
     private String imageUrl;
 
-    public Instruments() {
+    public Instrument() {
     }
 
     public Long getId() {

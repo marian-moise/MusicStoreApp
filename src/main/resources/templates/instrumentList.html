@@ -24,12 +24,33 @@
             crossorigin="anonymous"></script>
 
 
-    <div class="row">List Of instruments
+        <div class="panel-body">
+            <table class="table table-striped"  style="zoom: 1.7; width: 650px;">
+                <thead>
+                <tr>
+                    <th width="10%">Product</th>
+                    <th width="20%">Name</th>
+                    <th width="60%">Description</th>
+                    <th width="20%">Price</th>
+                </tr>
+                </thead>
+                <tbody>
 
+                <tr th:each="product: ${products}">
+                    <td>
+                        <img th:src="${product.getImageUrl()}" alt="" style="border: 0 solid #ccc; padding:10px;"/>
+                    </td>
 
+                    <td th:text="${product.name}" />
+                    <td th:text="${product.description}" />
+                    <td th:text="${product.unitPrice}" />
 
+                </tr>
 
+                </tbody>
+            </table>
         </div>
+
     </div>
 </div>
 <!--end of container-->

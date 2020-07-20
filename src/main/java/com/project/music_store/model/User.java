@@ -1,12 +1,8 @@
 package com.project.music_store.model;
 
 
-import com.project.music_store.model.security.UserRole;
-
-
-
 import javax.persistence.*;
-import java.util.*;
+
 
 @Entity
 @Table(name = "users")
@@ -33,10 +29,6 @@ public class User {
     //nu se accepta valori nule si nu se poate updata de user
     private String email;
     private String phone;
-
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<UserRole> userRoles = new HashSet<UserRole>();
 
 
     public User() {
@@ -110,13 +102,4 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<UserRole> userRoles) {
-        this.userRoles = userRoles;
-    }
-
 }
