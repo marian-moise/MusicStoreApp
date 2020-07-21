@@ -3,11 +3,11 @@
 <head th:replace="common/header :: common-header"></head>
 
 
-<body style="padding-bottom: 10px">
+<body class="instruments" style="padding-bottom: 10px;">
 <!-- Static navbar -->
 <div th:replace="common/header :: navbar"></div>
 
-<div class="container">
+<div class="container-table">
     <!--    Optional theme-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
           integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
@@ -25,29 +25,25 @@
 
 
         <div class="panel-body">
-            <table class="table table-striped"  style="zoom: 1.7; width: 650px;">
-                <thead>
-                <tr>
-                    <th width="10%">Product</th>
-                    <th width="20%">Name</th>
-                    <th width="60%">Description</th>
-                    <th width="20%">Price</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr th:each="product: ${products}">
-                    <td>
-                        <img th:src="${product.getImageUrl()}" alt="" style="border: 0 solid #ccc; padding:10px;"/>
-                    </td>
-
-                    <td th:text="${product.name}" />
-                    <td th:text="${product.description}" />
-                    <td th:text="${product.unitPrice}" />
-
-                </tr>
-
-                </tbody>
+            <table class="table"  style="zoom: 1.6; width: 500px;">
+               <div class="col-xs-8">
+                   <thead>
+                   <tr>
+<!--                       <th style="width: 20%">Product</th>-->
+<!--                       <th style="width: 70%">Name</th>-->
+<!--                       <th style="width: 10%">Price</th>-->
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr th:each="product: ${products}">
+                       <td>
+                           <img th:src="${product.getImageUrl()}" alt="" style="border: 0 solid #ccc; padding:10px; width: 80px"/>
+                       </td>
+                       <td th:text="${product.name}"></td>
+                       <td th:text="${product.unitPrice}"></td>
+                   </tr>
+                   </tbody>
+               </div>
             </table>
         </div>
 

@@ -1,7 +1,24 @@
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+/*body {*/
+/*    padding-top: 20px;*/
+/*    padding-bottom: 20px;*/
+/*    background: linear-gradient(#0c5460, burlywood);*/
+/*}*/
+
+.instruments {
+    background-color: white;
+}
+
+.index {
     background: linear-gradient(#0c5460, burlywood);
+}
+
+.indexLogOut {
+    padding-bottom: 10px;
+    background: linear-gradient(#0c5460, burlywood);
+}
+
+.container-table {
+    padding-left: 280px;
 }
 
 .container {
