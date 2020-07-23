@@ -23,31 +23,81 @@
             integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
             crossorigin="anonymous"></script>
 
-
-        <div class="panel-body">
-            <table class="table"  style="zoom: 1.6; width: 500px;">
-               <div class="col-xs-8">
-                   <thead>
-                   <tr>
-<!--                       <th style="width: 20%">Product</th>-->
-<!--                       <th style="width: 70%">Name</th>-->
-<!--                       <th style="width: 10%">Price</th>-->
-                   </tr>
-                   </thead>
-                   <tbody>
-                   <tr th:each="product: ${products}">
-                       <td>
-                           <img th:src="${product.getImageUrl()}" alt="" style="border: 0 solid #ccc; padding:10px; width: 80px"/>
-                       </td>
-                       <td th:text="${product.name}"></td>
-                       <td th:text="${product.unitPrice}"></td>
-                   </tr>
-                   </tbody>
-               </div>
-            </table>
+    <div class="CategoryTitle">Chitare electrice</div>
+    <div class="dropdown" id="guitars-filter">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            Sort By
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="drop-down-menu-2">
+            <button class="dropdown-item" type="button" id="field-up">Pret Crescator</button>
+            <button class="dropdown-item" type="button" id="field-down">Pret Descrescator</button>
         </div>
-
     </div>
+
+    <div class="panel-body">
+        <table class="table" style="zoom: 1.6; width: 600px; margin-top: 10mm;">
+            <div class="col-xs-8">
+                <tbody>
+                <tr th:each="product: ${products}">
+                    <td>
+                        <img th:src="${product.getImageUrl()}" alt=""
+                             style="border: 0 solid #ccc; padding:10px; width: 155px"/>
+                    </td>
+                    <td th:text="${product.name}" style="font-size: 3.2mm"></td>
+                    <td th:text="${product.unitPrice}" style="font-size: 3.2mm; font-weight: bold;"></td>
+                    <td th:text="${product.concurrency}" style="font-size: 3.2mm; font-weight: bold;"></td>
+                </tr>
+                </tbody>
+            </div>
+        </table>
+    </div>
+
+    <div class="card">
+        <article class="card-group-item">
+            <header class="card-header">
+                <h6 class="title">Range input </h6>
+            </header>
+            <div class="filter-content">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Min</label>
+                            <input type="number" class="form-control" id="inputEmail4" placeholder="€0">
+                        </div>
+                        <div class="form-group col-md-6 text-right">
+                            <label>Max</label>
+                            <input type="number" class="form-control" placeholder="€1,0000">
+                        </div>
+                    </div>
+                </div> <!-- card-body.// -->
+            </div>
+        </article> <!-- card-group-item.// -->
+        <article class="card-group-item">
+            <header class="card-header">
+                <h6 class="title">Selection </h6>
+            </header>
+            <div class="filter-content">
+                <div class="card-body">
+                    <div class="custom-control custom-checkbox">
+                        <span class="float-right badge badge-light round">52</span>
+                        <input type="checkbox" class="custom-control-input" id="Check1">
+                        <label class="custom-control-label" for="Check1">PRS</label>
+                    </div> <!-- form-check.// -->
+
+                    <div class="custom-control custom-checkbox">
+                        <span class="float-right badge badge-light round">132</span>
+                        <input type="checkbox" class="custom-control-input" id="Check2">
+                        <label class="custom-control-label" for="Check2">VINTAGE</label>
+                    </div> <!-- form-check.// -->
+
+                </div> <!-- card-body.// -->
+            </div>
+        </article> <!-- card-group-item.// -->
+    </div> <!-- card.// -->
+
+
+</div>
 </div>
 <!--end of container-->
 

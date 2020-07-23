@@ -18,7 +18,7 @@
 }
 
 .container-table {
-    padding-left: 280px;
+    padding-left: 330px;
 }
 
 .container {
@@ -30,11 +30,31 @@
     /*margin: 40px auto;*/
 }
 
-
 .navbar {
     border: 0;
     padding-bottom: 5px;
     font-size: 4mm;
+}
+
+.CategoryTitle {
+    font-size: 10mm;
+    margin-bottom: 7mm;
+}
+
+#guitars-filter {
+    margin-bottom: 4mm;
+}
+
+#field-up {
+    width: 185px;
+    height: 30px;
+    font-size: 13px;
+}
+
+#field-down {
+    width: 185px;
+    height: 30px;
+    font-size: 13px;
 }
 
 .dropdown-menu {
@@ -51,5 +71,38 @@
 
 .form-control {
     font-size: 3.3mm;
+}
+
+#drop-down-menu-2 {
+    width: 185px;
+    height: 80px;
+    font-size: 13px;
+   background-color: #ffffff;
+}
+
+#dropdownMenu2 {
+    width: 185px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.card {
+    width: 311px;
+    height: 407px;
+    position: absolute;
+    top: 82px;
+    left: 0px;
+    font-size: 14px;
+    background-color: #f3f3f3;
+}
+
+.title {
+    font-size: 14px;
 }
 

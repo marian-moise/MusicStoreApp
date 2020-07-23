@@ -23,6 +23,9 @@ public class Instrument {
     @Column(name="unit_price")
     private BigDecimal unitPrice;
 
+    @Column(name="concurrency")
+    private String concurrency;
+
     @Column(name="image_url")
     private String imageUrl;
 
@@ -67,5 +70,13 @@ public class Instrument {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getConcurrency() {
+        return concurrency;
+    }
+
+    public void setConcurrency(String concurrency) {
+        this.concurrency = concurrency;
     }
 }

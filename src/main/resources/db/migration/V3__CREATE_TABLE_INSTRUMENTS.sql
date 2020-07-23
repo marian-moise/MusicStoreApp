@@ -4,5 +4,6 @@ CREATE TABLE  music_store.instruments (
   sku VARCHAR(255) DEFAULT NULL,
   name VARCHAR(255) DEFAULT NULL,
   unit_price BIGINT(20) DEFAULT NULL,
+  concurrency VARCHAR(20) DEFAULT NULL,
   image_url VARCHAR(255) DEFAULT NULL
 )
