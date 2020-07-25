@@ -38,7 +38,7 @@
 
 .CategoryTitle {
     font-size: 10mm;
-    margin-bottom: 7mm;
+    margin-bottom: 12mm;
 }
 
 #guitars-filter {
@@ -84,6 +84,9 @@
     width: 185px;
     height: 30px;
     font-size: 13px;
+    position: absolute;
+    top: -30px;
+    left: 1px;
 }
 
 .btn-secondary {
@@ -102,7 +105,32 @@
     background-color: #f3f3f3;
 }
 
+#searchInstrument {
+    position: relative;
+    top: -165px;
+    left: 792px;
+    width: 226px;
+    height: 12mm;
+}
+
+.form-inline .form-control {
+        display: inline-block;
+        width: 277px;
+        vertical-align: middle;
+        height: 30px;
+        position: relative;
+        left: -66px;
+    }
+
 .title {
     font-size: 14px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    height: 29px;
+    position: relative;
+    left: 168px;
+    top: -30px;
 }
 

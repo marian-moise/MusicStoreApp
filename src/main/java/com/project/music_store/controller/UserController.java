@@ -17,25 +17,21 @@ public class UserController {
 
     @GetMapping("/login")
     public String getLoginPage() {
-        return "login";
+        return "loginPage";
     }
 
     @PostMapping(value = "/login")
     public String postOnLoginPage(@ModelAttribute(name = "userDTO") UserDTO user, Model model) {
 
-
         String username = user.getUsername();
         String password = user.getPassword();
-        UserDTO userDTO = new UserDTO(username,password);
-        System.out.println(userDTO);
         String passwordFromDb = userService.findUserByUsername(username).getPassword();
-
 
         if (password.equals(passwordFromDb)) {
             return "indexWithLogout";
         }
 
         model.addAttribute("invalidCredentials", true);
-        return "login";
+        return "loginPage";
     }
 }

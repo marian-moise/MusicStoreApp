@@ -23,18 +23,32 @@
             integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
             crossorigin="anonymous"></script>
 
+    <!--Sort by price-->
     <div class="CategoryTitle">Chitare electrice</div>
-    <div class="dropdown" id="guitars-filter">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            Sort By
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="drop-down-menu-2">
-            <button class="dropdown-item" type="button" id="field-up">Pret Crescator</button>
-            <button class="dropdown-item" type="button" id="field-down">Pret Descrescator</button>
+    <form th:action="@{/instrumentList}" th:object="${instrumentDTO}" method="post">
+        <div class="dropdown" id="guitars-filter">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Sort By
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="drop-down-menu-2">
+                <button class="dropdown-item" type="button" id="field-up">Increasing price</button>
+                <button class="dropdown-item" type="button" id="field-down">Decreasing price</button>
+            </div>
         </div>
-    </div>
+    </form>
+    <!--Sort by price-->
 
+
+    <!--    Search by keyword-->
+    <form class="form-inline my-2 my-lg-0" id="searchInstrument" th:action="@{/products}" method="get">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <!--    Search by keyword-->
+
+
+    <!--    Table of instruments-->
     <div class="panel-body">
         <table class="table" style="zoom: 1.6; width: 600px; margin-top: 10mm;">
             <div class="col-xs-8">
@@ -52,7 +66,9 @@
             </div>
         </table>
     </div>
+    <!--    Table of instruments-->
 
+    <!--    Filter -->
     <div class="card">
         <article class="card-group-item">
             <header class="card-header">
@@ -95,6 +111,7 @@
             </div>
         </article> <!-- card-group-item.// -->
     </div> <!-- card.// -->
+    <!--    Filter -->
 
 
 </div>
