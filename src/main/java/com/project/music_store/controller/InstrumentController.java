@@ -3,6 +3,7 @@ package com.project.music_store.controller;
 import com.project.music_store.dto.InstrumentDTO;
 import com.project.music_store.model.Instrument;
 import com.project.music_store.repository.InstrumentRepository;
+import com.project.music_store.service.InstrumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,38 +16,32 @@ import java.util.List;
 
 @Controller
 public class InstrumentController {
+
     @Autowired
-    InstrumentRepository instrumentRepository;
+    InstrumentService instrumentService;
 
     @GetMapping("/instrumentList")
     public String listProducts(Model model) {
-        List<Instrument> products = instrumentRepository.findAll();
+        List<InstrumentDTO> products = instrumentService.findAllInstruments();
         model.addAttribute("products", products);
-        return "instrumentList";
+        return "instrumentListPage";
     }
 
 
     @GetMapping("/products")
     public String findProductsByKeyword(Model model, String keyword) {
         if(keyword != null) {
-            model.addAttribute("products", instrumentRepository.findByKeyword(keyword));
+            model.addAttribute("products", instrumentService.findByKeyword(keyword));
         } else {
-            model.addAttribute("products",instrumentRepository.findAll());
+            model.addAttribute("products",instrumentService.findAllInstruments());
         }
-        return "instrumentList";
+        return "instrumentListPage";
     }
 
-
-
-
-    @PostMapping(value = "/instrumentList")
-    public String listProductsDesc(@ModelAttribute(name = "instrumentDTO") InstrumentDTO instrumentDTO,
-                                   Model model) {
-
-        BigDecimal price = instrumentDTO.getUnitPrice();
-        List<Instrument> products = instrumentRepository.findInstrumentByUnitPriceOrderByUnitPriceDesc(price);
-        model.addAttribute("products", products);
-        return "instrumentList";
+    @GetMapping("/productsDecrease")
+    public String listProductsDesc(Model model, BigDecimal price) {
+        model.addAttribute("products", instrumentService.sortByDecreasingPrice(price));
+        return "instrumentListPage";
     }
 
 

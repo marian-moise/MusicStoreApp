@@ -25,7 +25,7 @@
 
     <!--Sort by price-->
     <div class="CategoryTitle">Chitare electrice</div>
-    <form th:action="@{/instrumentList}" th:object="${instrumentDTO}" method="post">
+    <form th:action="@{/productsDecrease}" method="get">
         <div class="dropdown" id="guitars-filter">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@
 
     <!--    Table of instruments-->
     <div class="panel-body">
-        <table class="table" style="zoom: 1.6; width: 600px; margin-top: 10mm;">
+        <table class="table" style="zoom: 1.6; width: 600px; margin-top: -2mm;">
             <div class="col-xs-8">
                 <tbody>
                 <tr th:each="product: ${products}">

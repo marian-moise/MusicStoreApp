@@ -16,6 +16,7 @@ public class InstrumentService {
     @Autowired
     InstrumentRepository instrumentRepository;
 
+
     public List<InstrumentDTO> sortByDecreasingPrice(BigDecimal price) {
         List<Instrument> instruments =
                 instrumentRepository.findInstrumentByUnitPriceOrderByUnitPriceDesc(price);
@@ -26,6 +27,9 @@ public class InstrumentService {
         return convertToDTOs(instrumentRepository.findByKeyword(keyword));
     }
 
+    public List<InstrumentDTO> findAllInstruments() {
+        return convertToDTOs(instrumentRepository.findAll());
+    }
 
 
 

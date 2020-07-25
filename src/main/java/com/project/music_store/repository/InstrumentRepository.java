@@ -15,7 +15,7 @@ public interface InstrumentRepository extends JpaRepository<Instrument, Integer>
 
     List<Instrument> findAll();
     List<Instrument> findInstrumentByUnitPriceOrderByUnitPriceDesc(BigDecimal price);
-    List<Instrument> findInstrumentByUnitPriceOrderByUnitPrice(BigDecimal price);
+
 
     @Query(
             value = "select * from instruments i where i.name like %:keyword% ",
