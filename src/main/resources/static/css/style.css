@@ -18,7 +18,7 @@
 }
 
 .container-table {
-    padding-left: 330px;
+    padding-left: 245px;
 }
 
 .container {
@@ -39,6 +39,7 @@
 .CategoryTitle {
     font-size: 10mm;
     margin-bottom: 12mm;
+    margin-left: 58px;
 }
 
 #guitars-filter {
@@ -77,7 +78,8 @@
     width: 185px;
     height: 80px;
     font-size: 13px;
-   background-color: #ffffff;
+    background-color: #ffffff;
+    left: 64px;
 }
 
 #dropdownMenu2 {
@@ -86,7 +88,7 @@
     font-size: 13px;
     position: absolute;
     top: -30px;
-    left: 1px;
+    left: 64px;
 }
 
 .btn-secondary {
@@ -96,7 +98,7 @@
 }
 
 .card {
-    width: 311px;
+    width: 278px;
     height: 407px;
     position: absolute;
     top: 82px;
@@ -108,19 +110,19 @@
 #searchInstrument {
     position: relative;
     top: -165px;
-    left: 792px;
+    left: 699px;
     width: 226px;
     height: 12mm;
 }
 
 .form-inline .form-control {
-        display: inline-block;
-        width: 277px;
-        vertical-align: middle;
-        height: 30px;
-        position: relative;
-        left: -66px;
-    }
+    display: inline-block;
+    width: 277px;
+    vertical-align: middle;
+    height: 30px;
+    position: relative;
+    left: 12px;
+}
 
 .title {
     font-size: 14px;
@@ -130,7 +132,8 @@
     cursor: pointer;
     height: 29px;
     position: relative;
-    left: 168px;
+    left: 250px;
     top: -30px;
+    margin-right: 0px;
 }
 

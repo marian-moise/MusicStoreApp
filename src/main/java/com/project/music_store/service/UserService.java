@@ -15,4 +15,5 @@ public class UserService {
     public User findUserByUsername(String username) {
         return userRepository.findFirstByUsername(username);
     }
+
 }

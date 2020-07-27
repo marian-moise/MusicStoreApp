@@ -31,9 +31,6 @@ public class InstrumentService {
         return convertToDTOs(instrumentRepository.findAll());
     }
 
-
-
-
     private List<InstrumentDTO> convertToDTOs(List<Instrument> instruments) {
         List<InstrumentDTO> instrDTO = new ArrayList<>();
 

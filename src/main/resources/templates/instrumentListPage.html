@@ -1,6 +1,7 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/header :: common-header"></head>
+<head th:replace="common/header :: common-header">
+</head>
 
 
 <body class="instruments" style="padding-bottom: 10px;">
@@ -23,8 +24,10 @@
             integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
             crossorigin="anonymous"></script>
 
-    <!--Sort by price-->
     <div class="CategoryTitle">Chitare electrice</div>
+
+
+    <!--Sort by price-->
     <form th:action="@{/productsDecrease}" method="get">
         <div class="dropdown" id="guitars-filter">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
@@ -32,8 +35,8 @@
                 Sort By
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="drop-down-menu-2">
-                <button class="dropdown-item" type="button" id="field-up">Increasing price</button>
-                <button class="dropdown-item" type="button" id="field-down">Decreasing price</button>
+                <button  class="dropdown-item" type="button" id="field-up" name="priceIncreasing">Increasing price</button>
+                <button  class="dropdown-item" type="button" id="field-down" name="priceDecreasing">Decreasing price</button>
             </div>
         </div>
     </form>
@@ -50,10 +53,10 @@
 
     <!--    Table of instruments-->
     <div class="panel-body">
-        <table class="table" style="zoom: 1.6; width: 600px; margin-top: -2mm;">
+        <table class="table" style="zoom: 1.6; width: 600px; margin-top: -2mm; margin-left: 18px;">
             <div class="col-xs-8">
                 <tbody>
-                <tr th:each="product: ${products}">
+                <tr th:each="product: ${x}">
                     <td>
                         <img th:src="${product.getImageUrl()}" alt=""
                              style="border: 0 solid #ccc; padding:10px; width: 155px"/>

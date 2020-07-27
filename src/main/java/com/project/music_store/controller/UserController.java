@@ -25,6 +25,12 @@ public class UserController {
 
         String username = user.getUsername();
         String password = user.getPassword();
+
+        if (userService.findUserByUsername(username) == null) {
+            model.addAttribute("invalidCredentials", true);
+            return "loginPage";
+        }
+
         String passwordFromDb = userService.findUserByUsername(username).getPassword();
 
         if (password.equals(passwordFromDb)) {
