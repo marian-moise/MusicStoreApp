@@ -39,13 +39,19 @@ public class InstrumentController {
         return "instrumentListPage";
     }
 
-    /////////////////////////////////
+
     @GetMapping("/productsDecrease")
-    public String listProductsDesc(Model model, BigDecimal priceDecreasing) {
-        if (priceDecreasing != null) {
-            model.addAttribute("x", instrumentService.sortByDecreasingPrice(priceDecreasing));
-        }
+    public String listProductsDesc(Model model) {
+        List<InstrumentDTO> products = instrumentService.sortByDecreasingPrice();
+        model.addAttribute("x", products);
         return "instrumentListPage";
     }
-/////////////////////////////////
+
+    @GetMapping("/productsIncrease")
+    public String listProductsAsc(Model model) {
+        List<InstrumentDTO> products = instrumentService.sortByIncreasingPrice();
+        model.addAttribute("x", products);
+        return "instrumentListPage";
+    }
+
 }

@@ -85,7 +85,7 @@
 #dropdownMenu2 {
     width: 185px;
     height: 30px;
-    font-size: 13px;
+    font-size: 15px;
     position: absolute;
     top: -30px;
     left: 64px;
@@ -121,7 +121,7 @@
     vertical-align: middle;
     height: 30px;
     position: relative;
-    left: 12px;
+    left: 266px;
 }
 
 .title {
@@ -132,8 +132,23 @@
     cursor: pointer;
     height: 29px;
     position: relative;
-    left: 250px;
+    left: 500px;
     top: -30px;
     margin-right: 0px;
 }
+
+
+#b1 {
+    border-radius: 0;
+    position: absolute;
+    right: 99px;
+}
+
+#b2 {
+    border-radius: 0;
+    position: absolute;
+    right: 149px;
+}
+
+
 

@@ -6,7 +6,7 @@ import com.project.music_store.repository.InstrumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +17,15 @@ public class InstrumentService {
     InstrumentRepository instrumentRepository;
 
 
-    public List<InstrumentDTO> sortByDecreasingPrice(BigDecimal price) {
+    public List<InstrumentDTO> sortByIncreasingPrice() {
         List<Instrument> instruments =
-                instrumentRepository.findInstrumentByUnitPriceOrderByUnitPriceDesc(price);
+                instrumentRepository.sortInstrumentsAscByPrice();
+        return convertToDTOs(instruments);
+    }
+
+    public List<InstrumentDTO> sortByDecreasingPrice() {
+        List<Instrument> instruments =
+                instrumentRepository.sortInstrumentsDescByPrice();
         return convertToDTOs(instruments);
     }
 
