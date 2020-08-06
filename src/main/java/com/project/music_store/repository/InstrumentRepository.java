@@ -34,6 +34,14 @@ public interface InstrumentRepository extends JpaRepository<Instrument, Integer>
             nativeQuery = true
     )
     List<Instrument> sortInstrumentsAscByPrice();
+
+    @Query(
+            value = "select *  " +
+                    "from music_store.instruments i where i.unit_price order by i.unit_price ",
+            nativeQuery = true
+    )
+    List<Instrument> sortInstrumentsByName();
+
 }
 
 
